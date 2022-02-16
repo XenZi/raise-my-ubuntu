@@ -34,3 +34,6 @@ sudo snap install spotify;
 
 #IntelliJ Idea Ultimate
 sudo snap install intellij-idea-ultimate --classic;
+
+#WhatsApp
+sudo snap install whatsie;
