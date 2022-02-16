@@ -24,7 +24,7 @@ sudo apt install git;
 #### Snap packages
 
 # Discord
-sudo snap install discord -y;
+sudo snap install discord;
 
 # VSC --Classic
 sudo snap install code --classic;
