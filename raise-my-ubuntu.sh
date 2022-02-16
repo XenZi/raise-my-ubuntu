@@ -8,6 +8,10 @@ sudo apt install gnome-tweaks;
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
 sudo dpkg -i google-chrome-stable_current_amd64.deb;
 
+#Viber
+wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb;
+sudo apt install ./viber.deb;
+
 #Installing nodejs
 sudo apt install nodejs;
 
