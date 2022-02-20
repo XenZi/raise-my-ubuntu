@@ -1,9 +1,33 @@
-# Update packages & Upgrade packages
-sudo apt-get update -y && sudo apt-get upgrade -y;
+#!/bin/bash
+./copy.sh
 
-# Installing tweaks for tweaking system
-sudo apt install gnome-tweaks;
+sudo apt-get update && sudo apt-get upgrade -y
 
+function install {
+  which $1 &> /dev/null
+
+  if [ $? -ne 0 ]; then
+    echo "Installing: ${1}..."
+    sudo apt install -y $1
+  else
+    echo "Already installed: ${1}"
+  fi
+}
+
+install gnome-tweaks
+install chrome-gnome-shell
+install curl
+install git
+install htop
+install nmap
+install tree
+install vim
+install wget
+install gimp
+install jpegoptim
+install optipng
+install figlet
+install lolcat
 # Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
 sudo dpkg -i google-chrome-stable_current_amd64.deb;
@@ -12,28 +36,9 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb;
 wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb;
 sudo apt install ./viber.deb;
 
-#Installing nodejs
-sudo apt install nodejs;
+for f in scripts/*.sh; do bash "$f" -H; done
 
-#Installing npm
-sudo apt install npm;
+sudo apt upgrade -Yellow
+sudo apt autoremove -Yellow
 
-#Installing git
-sudo apt install git;
-
-#### Snap packages
-
-# Discord
-sudo snap install discord;
-
-# VSC --Classic
-sudo snap install code --classic;
-
-# Spotify
-sudo snap install spotify;
-
-#IntelliJ Idea Ultimate
-sudo snap install intellij-idea-ultimate --classic;
-
-#WhatsApp
-sudo snap install whatsie;
+figlet "Hello! \n Now you can use your Linux :)" | lolcat
