@@ -1,5 +1,4 @@
 #!/bin/bash
-./copy.sh
 
 sudo apt-get update && sudo apt-get upgrade -y
 
@@ -38,7 +37,9 @@ sudo apt install ./viber.deb;
 
 for f in scripts/*.sh; do bash "$f" -H; done
 
-sudo apt upgrade -Yellow
-sudo apt autoremove -Yellow
+sudo apt upgrade -y
+sudo apt autoremove -y
 
-figlet "Hello! \n Now you can use your Linux :)" | lolcat
+cp .bashrc ~/.bashrc
+
+figlet "Hello! Now you can use your Linux :)" | lolcat
